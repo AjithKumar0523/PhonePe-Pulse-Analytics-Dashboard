@@ -13,7 +13,7 @@ st.set_page_config(layout="wide")
 conn = psycopg2.connect(
     host="localhost",
     user="postgres",
-    password="Ajith23",
+    password="your_password",
     database="Phonepay_data",
     port=5432)
 
@@ -420,4 +420,5 @@ else:
 
         df5=pd.read_sql("""SELECT Years,SUM(Transaction_count) Count
         FROM map_insurance GROUP BY Years ORDER BY Years""",conn)
+
         draw_chart(df5,"area","Insurance Area Trend")
